@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="app-container">
+
+        <div class="current-weather-container">
+
+            <h3 class="city"><%= city %></h3>
+            <h3 class="date"><%= currentDate %></h3>
+            <div class="current">
+
+                <div class="current-temperature">
+
+                    <div class="current-temperature-heading">
+                        <h2><%= currentTemperature %>°</h2>
+                    </div>
+                    <div class="weather-name">
+
+                        <h3><%= currentWeatherName %> </h3>
+
+                    </div>
+                </div>
+                <div class="current-weather-icon">
+                    <img src="<%= currentWeatherIcon %>" alt="Weather Icon">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hourly-forecast">
+
+            <% for (let i = 0; i < hourlyForecast.length; i++) { %>
+
+                <div class="hours">
+
+                    <% if ( i === 0) { %>
+                        
+                        <p>Now</p>
+                        
+                    <%} else { %>
+                        
+                        <p><%= hourlyForecast[i].hours %>:00</p>
+                        
+                    <% } %>
+
+                    <img src="<%= hourlyForecast[i].weatherIcon %>" alt="Hourly Weather Icon">
+
+                    <p class="hourly-weather"><%= hourlyForecast[i].temperature %>°</p>
+
+                </div>
+
+            <% } %>
+
+        </div>
+
+        <!-- Sliding forecast panel -->
+        <div class="forecast-panel">
+
+            <div class="drag-line"></div>
+
+            <h3>7-Day Forecast</h3>
+
+            <div class="daily-forecast">
+
+                <% for (let i = 0; i < dailyForecast.length; i++) { %>
+
+                    <div class="day">
+
+                        <p><%= dailyForecast[i].day %></p>
+                        <img src="<%= dailyForecast[i].weatherIcon %>" alt="Daily Weather Icon" width="30px">
+                        <p><%= dailyForecast[i].maxTemp %>°</p>
+                        <p><%= dailyForecast[i].weatherName %></p>
+
+                    </div>
+
+                <% } %>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const panel = document.querySelector(".forecast-panel");
+
+        panel.addEventListener("click", () => {
+            panel.classList.toggle("open");
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+body {
+    font-family: Poppins, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Styling for the location form */
+
+.location-container{
+    width: 300px;
+    height: 360px;
+    border-radius: 50px;
+    background-color: #71a8ee;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coordinates{
+    width: 260px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 60px 10px;
+    background: linear-gradient(140deg, #64acff, #011948);
+    border-radius: 40px;
+}
+
+.latitude {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-top: -5px;
+}
+
+.longitude {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+label{
+    color: white;
+    font-size: 20px;
+}
+
+input{
+    width: 86%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    padding: 0 15px;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.15); /* transparent dark blue */
+    backdrop-filter: blur(12px);         
+}
+
+.get-weather {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #568CD7;
+    color: white;
+    font-size: 16px;
+    margin-bottom: -20px;
+}
+
+/* Styling for the Weather App */
+
+.app-container {
+    width: 300px;
+    height: 600px;
+    border-radius: 50px;
+    background-color: #71a8ee;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow:hidden;
+    position:relative;
+
+}
+
+.current-weather-container {
+    width: 260px;
+    height: 200px;
+    padding: 10px 10px 10px 10px;
+    background: linear-gradient(140deg, #64acff, #011948);
+    border-radius: 40px;
+    margin-top: 10px;
+}
+
+.city {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0 0 10px;
+    font-weight: 300;
+}
+
+.date {
+    color: white;
+    font-size: 15px;
+    margin: -4px 0 0 10px;
+    font-weight: 300;
+}
+
+.current {
+    display: flex;
+    justify-content: spcace-between;
+    gap: 10px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.current-temperature {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.current-temperature-heading  h2{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.weather-name h3{
+    color: white;
+    font-size: 15px;
+    font-weight: 200;
+    margin-top: -15px;
+}
+
+.current-weather-icon img{
+    width: 80px;
+    height: 80px;
+}
+
+.hourly-forecast {
+    display: flex;
+    gap: 3px;
+    margin-top: 20px;
+}
+
+.hours {
+    width: 40px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: #568FD7;
+    color: white;
+    font-size: 10px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.hours img{
+    width: 30px;
+    height: 30px;
+    margin-top: -8px;
+}
+
+.hourly-weather {
+    margin-top: -3px;
+}
+
+.forecast-panel{
+    position:absolute;
+    bottom: -265px;   /* hidden */
+    width: 240px;
+    height: 480px;
+    background: #FEFEFE;
+    border-radius: 40px;
+    padding: 20px;
+    transition: bottom 0.4s ease;
+    overflow-y: auto;
+}
+
+.forecast-panel h3 {
+    text-align: center;
+}
+
+/* When active */
+.forecast-panel.open{
+    bottom: 10px;
+}
+
+.drag-line{
+    width:40px;
+    height:5px;
+    background:#ccc;
+    border-radius:5px;
+    margin: auto;
+}
+
+.daily-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.day {
+    width: 100%;
+    height: 53px;
+    background-color: #f2f5f6;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 10px;
+}
